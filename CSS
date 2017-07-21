@@ -1,0 +1,11 @@
+clearFix{
+    display: block;
+    clear: both;
+    content: '';}
+
+줄임말 {
+	display:block;
+	overflow:hidden;
+	width:100px;
+	white-space:nowrap;
+	text-overflow:ellipsis;}
