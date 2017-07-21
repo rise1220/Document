@@ -1,0 +1,45 @@
+WinSCP
+
+* 파일 소유권 바꾸기
+chown [소유권자]:[그룹식별자] [파일 or 폴더]
+	-R 하위 폴더까지 적용
+  
+
+* 권한 조정
+chmod [777] [파일 or 폴더]
+	-R 디렉토리의 하위에 위치한 모든 파일 및 디렉토리 적용
+ex) chmod +x [file] 권한 부여
+
+
+* 변경 파일 .sh 적용
+source ~/.bash_profile : 패스 바로 적용
+
+
+* 삭제 - 파일, 디렉토리
+rm -f [file]
+rm -r [dir/]
+
+
+* /etc/profile - OS 전체 PATH 설정
+  -PATH 설정시...
+  PATH = $PATH:xxx:  <== command not found 발생(띄어쓰기)
+  ======> 띄어쓰기 X (PATH=$PATH:xxxx:)
+
+
+* 포트설정
+/etc/init.d/iptables stop
+vi /etc/sysconfig/iptables
+/etc/init.d/iptables start
+/etc/init.d/iptables status
+
+
+* netstat -ntl 현재 사용중인 포트확인
+
+
+* vi /etc/httpd/conf/httpd.conf - apache 설정 (virtualhost)
+
+
+* apache 재시작하지 않고 httpd.conf 파일 적용
+  apachectl -k graceful 
+  or
+  service httpd graceful
