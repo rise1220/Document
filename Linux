@@ -1,4 +1,4 @@
-WinSCP
+* WinSCP
 
 * 파일 소유권 바꾸기
 chown [소유권자]:[그룹식별자] [파일 or 폴더]
@@ -40,6 +40,8 @@ vi /etc/sysconfig/iptables
 
 
 * apache 재시작하지 않고 httpd.conf 파일 적용
+
+  apachectl -t 	아파치 스크립트 구문 확인
   apachectl -k graceful 
   or
   service httpd graceful
