@@ -1,0 +1,11 @@
+# PN1707250116 - 형식의 오토 인크리지!!
+
+SELECT
+			CONCAT('PN', 
+				substring(curdate() +0, 3, 6),
+				LPAD(ifnull(MAX(RIGHT(if(substring(ID, 3, 6) =  substring(curdate() +0, 3, 6),
+										ID,
+										LPAD(0, 4, 0)
+										), 4)), 0) + 1, 4, 0))
+FROM 
+			TABLE
