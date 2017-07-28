@@ -1,0 +1,33 @@
+*. JVM Tuning 튜닝
+
+ 1. 메모리 가용성을 확보한 다음 힙 사이즈를 늘려라
+   - -server -Xms768M -Xmx768M
+ 2. garbage collector를 튜닝하라(GC 로깅 분석 후)
+   - -XX: +UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:-TraceClassUnloading
+ 3. 원격지에서 모니터링을 주기적으로 하라(물론 상용에선 빼라)
+   - -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8086 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false
+
+*. Tomcat 튜닝
+
+ 1.  중복 로그 접점을 제거하고 하나로 통일하라(logging.properties)
+   - .handlers = 1catalina.org.apache.juli.FileHandler,java.util.logging.ConsoleHandler 부분을 .handler = 1catalina.org.apache.juli.FileHandler로 변경
+ 2. 로그 Overflow 예방하기 위해 아래 설정을 logging.properties에 추가하라
+   - 1catalina.java.util.logging.FileHandler.pattern =${catalina.base}/logs/catalina.%g.log
+   - 1catalina.java.util.logging.FileHandler.limit = 20000000
+   - 1catalina.java.util.logging.FileHandler.count = 5
+ 3.  Synchronized Logging은 Disk I/O, 어플의 bottleneck의 한 요소이니 Asynchronous Logging으로해도 무방하다.
+ 4. maxKeepAliveRequest수가 클 경우 1000이 넘을 경우(TCP커넥션당 HTTP request가 많을 경우에 해당함)
+   - keep alive를 disable한다.
+ 5. DNS lookups을 줄여라(server.xml)
+  - enableLookups=false
+ 6. maxThreads 늘리고, connectionTimeout을 줄여라
+  - maxThreads=512, connectionTimeout=5000
+ 7. 불필요한 부하 발생을 제거하라
+  - reloadable을 false, debug는 0, acceptCount를 무리하게 크게 하지 않음
+ 8. 네트워크 트래픽을 줄여라
+  - compression를 on하고 compressableMimeTypes를 지정(text/html,text/xml,text/javascript,text/css,text/plain)
+
+*. AJP Tuning
+
+ 1. 톰켓 서버를 두대이상 운영할 경우 Load Balance를 하라
+ 2. 커넥션 설정(Socket Timeout, Connection Pool Size, Connection Pool Timeout)을 지정하라
