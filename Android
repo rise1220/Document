@@ -1,0 +1,31 @@
+안드로이드 설정
+
+1. build gradle 2개 파일에 아래 추가 
+
+repositories {
+     maven { url 'http://repo1.maven.org/maven2' }
+     jcenter { url 'http://jcenter.bintray.com/' }
+     maven { url "https://www.jitpack.io" }
+ }
+
+ 2. 인증서 Accep 여부 자꾸 뜰때
+
+Settings-Server Certificates-Accept non-trusted certificates automatically 체크
+
+3. build tool 버전 설치 안됬다고 하면서 Run app 안될 때
+
+app 오른쪽 마우스 클릭-Open Module Settings-Properties: Compile Sdk Version/Build Tools Version, Flavors: Min Sdk Version/Target Sdk Version 맞추어 준다.
+
+4. apk 생성 실패하여 build fail 날때
+
+Settions-Build, Execution, Deployment-Instant Run-Enable Instant Run to hot swap code/resource changes on deploy 체크해제
+
+5. 소스상 ip 설정
+
+com.poscoict.evhcos.util.EvhcosInfo-MAIN_PAGE_URL,FCM_IID_REGIST_URL 바꿈.
+com.poscoict.evhcos.ui.MainActivity 에 MAIN_PAGE_URL이 선언되 있음.
+com.poscoict.evhcos.fcm.FcmIdRegisterService에 FCM_IID_REGIST_URL이 선언되 있음.
+
+6. 알림 아이콘 안 뜰 때
+
+build.gradle에서       android {  targetSdkVersion 20로 맞춰줌.
