@@ -1,0 +1,46 @@
+$(function() {
+    var $sct = $("li");
+    var height = $("ul").height();
+    var count = $sct.size();
+    var c_idx = o_idx = 0;
+    var time = 5000 
+    var a_time = 800;
+    var interval = null;
+    
+    $('#button').on('click', function() {
+			clearInterval(interval);
+		});
+ 
+    if(count > 1)
+        interval = setInterval(top_rolling, time);
+ 
+    $sct.hover(
+        function() {
+            if(interval != null)
+                clearInterval(interval);
+        },
+        function() {
+            if(interval != null)
+                clearInterval(interval);
+ 
+            if(count > 1)
+                interval = setInterval(top_rolling, time);
+        }
+    );
+ 
+    function top_rolling() {
+        $sct.eq(o_idx).animate(
+            { top: "-="+height+"px" }, a_time
+        );
+ 
+        c_idx = (o_idx + 1) % count;
+ 
+        $sct.eq(c_idx).css("display", "block").animate(
+            { top: "-="+height+"px" }, a_time,
+            function() {
+                $sct.eq(o_idx).css("display", "none").css("top", height+"px");
+                o_idx = c_idx;
+            }
+        );
+    }
+});
