@@ -5,20 +5,40 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script type="text/javascript"  src="./jquery-1.12.4.js"></script>
 </head>
 <body>
+
+	<div>
+		<a href="#">a</a>
+		<a href="#">b</a>
+		<a href="#">c</a>
+	</div>
 	
 	<script>
 	
 	//var url = "https://www.google.co.kr/?gfe_rd=cr&dcr=0&ei=BynsWbKrLovKqAGT07YY#q=html5";
 	//var url = "https://www.google.co.kr/?gfe_rd=cr&dcr=0&ei=BynsWbKrLovKqAGT07YY";
-	var url = 'https://www.google.co.kr/?'+encodeURIComponent('param={"a":"a", "b":"b", "c":"c"}')+'&'+encodeURIComponent('a=가나다');
+	var url = 'https://www.google.co.kr/?'+encodeURIComponent('param={"a":"a", "b":"b", "c":"c"}')+'&'+encodeURIComponent('a=가나다')+'&undi=undefined';
 	//var url = "https://www.google.co.kr/";
 	//var url = "https://www.google.co.kr/search?newwindow=1&q=%EA%B0%80%EB%82%98%EB%8B%A4&oq=%EA%B0%80%EB%82%98%EB%8B%A4&gs_l=psy-ab.3..0l10.8610.9176.0.9308.6.6.0.0.0.0.115.621.2j4.6.0....0...1.1j4.64.psy-ab..2.4.422...0i131k1.0.6jSKnJazXhw";
 	
 	console.log(url);
 	console.log(fn_urlToMap(url));
+	
+	
+	
+	// 마지막 a태그 strong, "pointer-events=none", 
+	$.fn.addCssToElement = function() {
+		var $this = $(this);
+		var size = $this.length;
+		
+		$this	.eq(size-1).html("<strong>"+$this.eq(size-1).text()+"</strong>")
+				.css("pointer-events", "none");
+		
+	};
+	
 	
 	/*
 	* url map로 변환
@@ -35,11 +55,13 @@
 		obj.href = url;
 		obj.param = {};
 		
+		//hash있으면 제외하고 hash속성 추가
 		if(url.indexOf("#") != -1) {
 			temp = url.split("#")[0];
 			obj.hash = url.split("#")[1];
 		}
 		
+		//quiryString이 없으면 return
 		if(temp.indexOf("?") == -1) return obj;
 		
 		obj.url = temp.split("?")[0];
@@ -49,6 +71,7 @@
 			
 			var paramList = obj.quiryString;
 			
+			//"&"있으면 split
 			if(obj.quiryString.indexOf("&") != -1) {
 				paramList = obj.quiryString.split("&");
 			}
@@ -56,10 +79,13 @@
 			for(var i=0, size=paramList.length; size > i; i++) {
 				
 				var decodedParam = decodeURIComponent(paramList[i]);
-								
+
 				if(decodedParam.indexOf("=") == -1) continue;
 				
 				var params = decodedParam.split("=");
+				
+				//parameter의 값이 "" or "undefined" continue
+				if(!params[1] || params[1] == "undefined") continue;
 					
 				var tmp = false;
 				try {
@@ -76,6 +102,9 @@
 		
 		return obj;
 	}
+	
+	$('div > a').addCssToElement();
+	
 	</script>
 </body>
 </html>
