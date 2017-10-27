@@ -1,0 +1,192 @@
+function categorySetting(vname,vcno,vpcno,vdepth){
+		
+		console.log("1", vname);
+		console.log("1", vcno);
+		console.log("1", vpcno);
+		console.log("1", vdepth);
+		
+		var self = this;			
+		this.dragable = new layers({
+			move : function(){},
+			end  : function(){
+				var child = self.nav.find('li');
+				for (var i=0; i< child.length ; i++){
+					child.eq(i).attr('t',i);
+					
+					if(i%2!=0){
+						child.eq(i).find('>a').addClass('nav-striped');
+					}else{
+						child.eq(i).find('>a').removeClass('nav-striped');
+					}	
+				}
+			}
+		});
+		this.menuArr =[
+			{
+				name :'그룹관리',
+				index :'0',
+				child : []
+			}
+		] 
+		
+		this.groupFormEditArea = $("#category-form-group");
+		this.groupForm = $("#category-form");
+		this.nav = $("#categorySetting");
+		this.menuDataSub = new menu({	
+			id    :'dropdown-add',
+			addClass :'dropdown-add',
+			menu : [								
+				{
+					text  :'<i class="icon icon-add"></i><span class="color-primary">추가</span>',						
+					id    :'0001',					
+					click :function(options){
+						self.add(options,vname,vcno,vpcno,vdepth);
+					}
+				},{
+					text  :'<i class="icon icon-minus"></i><span>삭제</span>',
+					id    :'0001',					
+					click :function(options){
+						self.delete(options);
+					}
+				}
+			]
+		});	
+		this.menuDataSection = new menu({	//변경all
+			id    :'dropdown-add',
+			addClass :'dropdown-add',
+			menu : [								
+				{
+					text  :'<i class="icon icon-add"></i><span class="color-primary">추가</span>',						
+					id    :'0001',					
+					click :function(options){
+						self.add(options,vname,vcno,vpcno,vdepth)
+					}
+				}
+			]
+		})
+		this.init();
+	}
+	categorySetting.prototype.init  = function(){
+		var self = this;
+		this.child = this.nav.find("li");
+		this.tabsNav = this.child.find('[data-tabs="collapse"]');
+		for (var i=0; i< this.child.length ; i++){
+			
+			if(i%2!=0){
+				this.child.eq(i).find('>a').addClass('nav-striped');
+			}else{
+				this.child.eq(i).find('>a').removeClass('nav-striped');
+			}
+			if(!i){
+				new dropdown({
+					obj  : this.child.eq(i).find('a'),				
+					dir   :'mouse',		
+					mouse :'right',
+					event :'mousedown',	
+					data  : this.menuDataSection
+				});
+			}else{
+				new dropdown({
+					obj  : this.child.eq(i).find('a'),				
+					dir   :'mouse',		
+					mouse :'right',
+					event :'mousedown',	
+					data  : this.menuDataSub
+				});
+			}
+				
+		}
+		this.child.on('click',function(e){
+			e.preventDefault();
+		})			
+		
+		this.dragable.init({
+			area : $("#dragablearea"),
+			drag : $("#dragablearea > li")
+		})	
+		new formfield();
+	}
+	categorySetting.prototype.delete = function(options){
+		 options.obj.parent().remove();
+	}
+	categorySetting.prototype.add = function(options,vname,vcno,vpcno,vdepth){
+		
+		console.log("2", vname);
+		console.log("2", vcno);
+		console.log("2", vpcno);
+		console.log("2", vdepth);
+		
+		if(vname == '' || vname == null || vname == undefined){
+			vname = 'New' ;
+		}
+		var maxDepth =2;//변경
+		var parent = options.obj.parent();
+		var child =  options.obj.parent().find('[child=true]');
+		var collapse="";
+		var icon="";
+		var level ;	
+		var toggleLink;
+		var item;
+		var idString="";
+		var memuID=null;
+		var formClone=null;
+		if(parent.attr('depth-level') == undefined){
+			parent.attr('depth-level',0);
+		}
+		level = Number(parent.attr('depth-level')) + 1;
+		if(level > maxDepth){
+			return false;
+		}			
+		if(level >= maxDepth && child.length == 0){
+		  	collapse="collapse";
+			icon='<i class="icon icon-arrow">';
+		}			
+		if(child.length == 0){
+			parent.find('>a').append('<i class="icon icon-depth"></i>');
+			parent.find('>a').attr('data-toggle','collapse');
+			parent.find('>a').attr('data-parent',parent.attr('menu-id'));
+			parent.append('<ul child="true" class="childs" data-toggle-content="'+parent.attr('menu-id')+'"></ul>');
+			child = parent.find('[child=true]');
+			parent.find('>a').toggle();
+		}
+		
+		console.log("vname....: ", vname);
+		
+		child.append('<li depth-level="'+level+'" class="item"><a href="#"><span>'+vname+'</span></a></li>');//vname,vcno,vpcno,vdepth
+		item = child.find('li').last();
+		if(parent.attr('menu-id')){
+			memuID = parent.attr('menu-id')+'-'	;
+		}else{
+			memuID="";
+		}				
+		item.attr('menu-id',memuID+String(item.index()));
+		console.log("parent.attr('menu-id').....: ", parent.attr('menu-id'));
+		var menudepth = parent.attr('menu-id').split('-');
+		this.init();
+	}
+	
+	$(function(){
+		$('[name="iso-01"]').change(function(){					
+			if ($(this).is(":checked")) {						
+				$('[name="iso-01-item"]').checked();
+			} else {
+				$('[name="iso-01-item"]').unchecked();
+			}		
+		})	
+		$('[name="iso-02"]').change(function(){					
+			if ($(this).is(":checked")) {						
+				$('[name="iso-02-item"]').checked();
+			} else {
+				$('[name="iso-02-item"]').unchecked();
+			}		
+		})	
+		$('[name="iso-03"]').change(function(){					
+			if ($(this).is(":checked")) {						
+				$('[name="iso-03-item"]').checked();
+			} else {
+				$('[name="iso-03-item"]').unchecked();
+			}		
+		})	
+		new categorySetting('','','','');
+			
+	});
