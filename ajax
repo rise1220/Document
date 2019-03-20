@@ -1,38 +1,78 @@
 var ajaxFactory = (function() {
 	
 	var defaultOpt = {};
-	var newOpt = {};
-	
 	defaultOpt.method = "POST";
 	defaultOpt.contentType = "application/json";
 	defaultOpt.dataType = "json";
-	defaultOpt.beforSend = function() {bsCallback()};
-	defaultOpt.async = true;
-	defaultOpt.processData = false;
-	defaultOpt.success = function(res) {callback(res)};
 	
-	defaultOpt.url = "";
-	defaultOpt.data = {};
-	
-	var opt = $.extend(defaultOpt, newOpt);
-	
-	// @param : obj - url, data, successCode
-	var setOpt = function(opt) {
-		this.newOpt = opt;
+	var get = function(uri, data, bsCallback, callback) {
+		var opt = {};
+		opt = makeOpt(uri, data, bsCallback, callback);
+		opt.method = "GET";
+		excuteAjax(opt);
 	};
 	
-	var startAjax = function(callback) {
-		$.ajax(opt);
+	var post = function(uri, data, bsCallback, callback) {
+		var opt = {};
+		opt = makeOpt(uri, data, bsCallback, callback);
+		excuteAjax(opt);
+	};
+	
+	var put = function(uri, data, bsCallback, callback) {
+		var opt = {};
+		opt = makeOpt(uri, data, bsCallback, callback);
+		opt.method = "PUT";
+		excuteAjax(opt);
+	};
+	
+	var del = function(uri, data, bsCallback, callback) {
+		var opt = {};
+		opt = makeOpt(uri, data, bsCallback, callback);
+		opt.method = "DELETE";
+		excuteAjax(opt);
+	};
+	
+	var multipart = function(uri, data, bsCallback, callback) {
+		var opt = {};
+		opt = makeOpt(uri, data, bsCallback, callback);
+		opt.method = "POST";
+		opt.processData = false;
+		opt.contentType = false;
+		excuteAjax(opt);
+	};
+	
+	var makeOpt = function(uri, data, bsCallback, callback) {
+		var opt = {};
+		opt = defaultOpt;
+		if(typeof bsCallback == "function") {
+			opt.beforSend = function() { 
+				console.log("============beforSend=============");
+				bsCallback();
+			}
+		}
+		opt.success = function(res) { 
+			console.log("============success============");
+			console.log(res);
+			callback(res);
+		};
+		
+		return opt;
+	};
+	
+	var excuteAjax = function(opt) {
+		try {
+			$.ajax(opt);
+		} catch (e) {
+			console.log("excuteAjax Exception: ", e);
+		}
 	};
 	
 	return {
-		setOpt : setOpt,
-		startAjax : startAjax
+		get : get,
+		post : post,
+		put : put,
+		del : del,
+		multipart : multipart
 	}
+	
 }());
-
-ajaxFactory.setOpt({
-	url : "/test",
-	data : JSON.stiringify({"a":1, "b":2})
-		
-})
