@@ -1,0 +1,38 @@
+var ajaxFactory = (function() {
+	
+	var defaultOpt = {};
+	var newOpt = {};
+	
+	defaultOpt.method = "POST";
+	defaultOpt.contentType = "application/json";
+	defaultOpt.dataType = "json";
+	defaultOpt.beforSend = function() {bsCallback()};
+	defaultOpt.async = true;
+	defaultOpt.processData = false;
+	defaultOpt.success = function(res) {callback(res)};
+	
+	defaultOpt.url = "";
+	defaultOpt.data = {};
+	
+	var opt = $.extend(defaultOpt, newOpt);
+	
+	// @param : obj - url, data, successCode
+	var setOpt = function(opt) {
+		this.newOpt = opt;
+	};
+	
+	var startAjax = function(callback) {
+		$.ajax(opt);
+	};
+	
+	return {
+		setOpt : setOpt,
+		startAjax : startAjax
+	}
+}());
+
+ajaxFactory.setOpt({
+	url : "/test",
+	data : JSON.stiringify({"a":1, "b":2})
+		
+})
