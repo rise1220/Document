@@ -1,0 +1,83 @@
+<!Document html>
+<html>
+<head>
+<title>save obj test</title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	var fnObjFactory = (function(){
+		var obj = {};
+		var historyObj = {};
+		
+		var setObj = function(key, value) {
+			this.obj[key] = value;
+		};
+		var getObj = function(key) {
+			return this.obj[key];
+		};
+		var setAllObj = function(obj) {
+			this.obj = obj;
+		};
+		var getAllObj = function() {
+			return this.obj;
+		};
+		
+		var setHistoryObj = function(key, value) {
+			this.historyObj[key] = value;
+		};
+		var getHistoryObj = function(key) {
+			return this.historyObj[key];
+		};
+		var setAllHistoryObj = function(obj) {
+			this.historyObj = obj;
+		};
+		var getAllHistoryObj = function() {
+			return this.historyObj;
+		};
+		return {
+			setObj : setObj,
+			getObj : getObj,
+			setAllObj : setAllObj,
+			getAllObj : getAllObj,
+			setHistoryObj : setHistoryObj,
+			getHistoryObj : getHistoryObj,
+			setAllHistoryObj : setAllHistoryObj,
+			getAllHistoryObj : getAllHistoryObj
+		}
+	}());
+	
+	//셀렉터 적용 필요. class or id에 규칙 적용?
+	
+	
+	/** //array, Object 구분.
+		var obj = { an: "object" };
+		var arr = [ an, arrary ];
+		var myObj = new MyObject();
+		 
+		if ( obj.constructor == Object ) alert('This is an object!');
+		if ( arr.constructor == Array ) alert('This is an array!');
+		if ( myObj.constructor == MyObject ) alert('My holy object!');
+		
+		// Map save
+		var map_save = function(map) {
+			$.each(map, function(key, value) {
+				console.log("key: ",key," value: ", value);
+				save(key,value);
+			});
+		};
+	*/
+	
+	
+	
+</script>
+</head>
+<body>
+	
+
+<script>
+$(function() {
+	
+});
+
+</script>
+</body
+</html>
