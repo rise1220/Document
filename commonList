@@ -1,0 +1,91 @@
+<script>
+var commonList = function() {
+		var columnArr = {};
+		var rowObj = {};
+		var page;
+		var totalCount;
+		
+		var setPage = function(page, totalCount) {
+			this.page = page;
+			//this.totalCount = totalCount;
+		};
+		/* 
+		*
+		*
+		*[{"colId":"colId", "colNm":"colNm", },{...}]
+		*/
+		var setColumn = function(arr) {
+			if(isEmpty(arr)) {
+				console.log("need arr...");
+				return false;
+			}
+			$.extend(columnArr, arr);
+		};
+		
+		/* 
+		*
+		*
+		*ajax response value set..(contents.)
+		*/
+		var setRow = functoin(arr) {
+			if(isEmpty(arr) {
+				console.log("need obj...");
+				return false;
+			}
+			$.extend(bodyObj, obj);
+		};
+		
+		var excute = function(selector) {
+			var str = "";
+			
+			$.each(columnArr, function() {
+				
+			});	
+			
+			$.each(rowArr, function(idx, entry) {
+				var num = (page-1) + idx+1;
+			}
+			
+			$(selector).html(str);
+			
+		};
+		
+		var paging = function(selector) {
+			var start, end;
+			var next = false;
+			var prev = false;
+			var size = 10;
+			var maxRow = 10;
+			
+			var tempEnd = (Math.ceil(this.page/size)*size);
+			start = tempEnd - (size - 1);
+			var realEndPage = Math.ceil(totalCount / maxRow);
+			if(tempEnd < realEndPage){
+				end = tempEnd;
+				next = true;
+			} else end = realEndPage;
+			if(start != 1) prev = true;
+			
+			var str = "";
+			str += "<ul>";
+			if(prev) str += "<li><a>prev</a></li>";
+			for(start; end >= start; start++) {
+				if(this.page == start) {
+					str += "<li><a data-idx=\""+start+"\">"+start+"</a></li>";
+					return continue;
+				}
+				str += "<li><a data-idx=\""+start+"\">"+start+"</a></li>";
+			}
+			if(next) str += "<li><a>next</a></li>";
+			str += "</ul>";
+			
+			$(selector).html(str);
+		};
+		
+	return {
+		setColumn : setColumn,
+		setRow : setRow,
+		excute : excute
+	}
+}
+</script>
