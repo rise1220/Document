@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="./css/resset.css">
+        <link rel="stylesheet" href="./css/basic.css">
+        <link rel="stylesheet" href="./css/layout.css">
+        <link rel="stylesheet" href="./css/contents.css">        
+
+        <!-- font-family: 'Nanum Square'; -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+        
+
+        <!-- js -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="./js/index.js"></script>
+        <script src="./js/common.js"></script>
+
+
+        <!-- datepicker -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <title></title>
+    </head>
+    <body>
+        <div id="wrap">
+            <!-- header -->
+            <header id="left_fix_bar">
+                <div class="header">
+                    <a href="./main.html" id="logo"><img src="./images/lnd-btn-home.png" alt=""></a>
+                    <div class="user">
+                        <div class="user_img">
+                            <a href="" class="btn_user_set"></a>
+                        </div>
+                        <p class="user_name">사용자</p>
+                        <p class="user_id">ABC123456</p>
+                    </div>
+                </div>
+                <nav id="lnb">
+                    <ul class="depth-1">
+                        <li><a href="#n">타겟팅</a>
+                            <ul class="depth-2">
+                                <li><a href="#n">타겟팅 조회</a></li>
+                                <li><a href="#n">타겟팅 생성</a>
+                                    <ul class="depth-3">
+                                        <li><a href="#n" class="current">스마트 타겟팅</a></li>
+                                        <li><a href="#n">매뉴얼 타겟팅</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#n">고객 세그먼트</a>
+                            </ul>
+                        </li>
+                        <li><a href="#n">캠페인</a>
+                            <ul class="depth-2">
+                                <li><a href="#n">타겟팅 조회</a></li>
+                                <li><a href="#n">타겟팅 생성</a>
+                                    <ul class="depth-3">
+                                        <li><a href="#n">스마트 타겟팅</a></li>
+                                        <li><a href="#n">매뉴얼 타겟팅</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#n">고객 세그먼트</a>
+                            </ul>
+                        </li>
+                        <li><a href="#n">리포트</a></li>
+                        <li><a href="#n">대시보드</a></li>
+                        <li><a href="#n">관리자</a></li>
+                    </ul>
+                </nav>
+                <a href="#n" id="fix-menu"></a>
+            </header>
+
+            <!-- body -->
+            <section id="body_wrap">
+                <!-- 컨텐츠 : 상단 : 프로세서 바 영역  -->
+                <header id="body_header">
+                    <div class="process_line">
+                        <a href="" class="button btn_type02 btn-home"></a>
+                        <span>타겟팅</span>
+                        <span>&gt;</span>
+                        <span>타겟팅 생성</span>
+                        <span>&gt;</span>
+                        <span>스마트 타겟팅</span>
+                    </div>
+                    <div class="step_line">
+                        <dl class="on">
+                            <dt>1</dt>
+                            <dd>타겟정보 입력</dd>
+                        </dl>
+                        <dl>
+                            <dt>2</dt>
+                            <dd>모수설정</dd>
+                        </dl>
+                        <dl>
+                            <dt>3</dt>
+                            <dd>확인</dd>
+                        </dl>
+                    </div>
+                </header>
+
+                <!-- 컨텐츠 : 중간 : 컨텐츠 영역 -->
+                <section id="body_contents">
+                    <div class="body_con_bg trageting_create_top_container">
+                        <!-- 컨텐츠 : 시작 -->
+                        <div class="tab_container">
+                            <ul>
+                                <li class="on"><a href="#n">타겟정보</a></li>
+                            </ul>
+                        </div>
+
+                        <ul class="targeting_infomation">
+                            <li>
+                                <div>
+                                    <label for="">타겟팅명</label>
+                                    <input type="text" class="input_type01" placeholder="입력하세요" />
+                                </div>
+                                <div>
+                                    <label for="">채널</label>
+                                    <ul class="select_box_conatiner">
+                                        <li><a href="#n">전체보기</a>
+                                            <ul class="select_list">
+                                                <li class="check"><a href="#n">전체보기</a></li>
+                                                <li><a href="#n">가</a></li>
+                                                <li><a href="#n">나</a></li>
+                                                <li><a href="#n">다</a></li>
+                                                <li><a href="#n">라</a></li>
+                                                <li><a href="#n">마</a></li>
+                                                <li><a href="#n">바</a></li>
+                                                <li><a href="#n">사</a></li>
+                                                <li><a href="#n">아아아아</a></li>
+                                                <li><a href="#n">자자</a></li>
+                                                <li><a href="#n">차차차</a></li>
+                                                <li><a href="#n">카카카카</a></li>
+                                                <li><a href="#n">타타타</a></li>
+                                                <li><a href="#n">파파파</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <label for="">채널상세</label>
+                                    <ul class="select_box_conatiner">
+                                        <li><a href="#n">전체보기</a>
+                                            <ul class="select_list">
+                                                <li class="check"><a href="#n">전체보기</a></li>
+                                                <li><a href="#n">가</a></li>
+                                                <li><a href="#n">나</a></li>
+                                                <li><a href="#n">다</a></li>
+                                                <li><a href="#n">라</a></li>
+                                                <li><a href="#n">마</a></li>
+                                                <li><a href="#n">바</a></li>
+                                                <li><a href="#n">사</a></li>
+                                                <li><a href="#n">아아아아</a></li>
+                                                <li><a href="#n">자자</a></li>
+                                                <li><a href="#n">차차차</a></li>
+                                                <li><a href="#n">카카카카</a></li>
+                                                <li><a href="#n">타타타</a></li>
+                                                <li><a href="#n">파파파</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <label for="">캠페인 기간</label>
+                                    <input type="text" id="datepicker" class="datepicker" />
+                                    <span> ~ </span>
+                                    <input type="text" id="datepicker2" class="datepicker" />
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <label for="">유효고객</label>
+                                    <ul class="select_box_conatiner">
+                                        <li><a href="#n">전체보기</a>
+                                            <ul class="select_list">
+                                                <li class="check"><a href="#n">전체보기</a></li>
+                                                <li><a href="#n">가</a></li>
+                                                <li><a href="#n">나</a></li>
+                                                <li><a href="#n">다</a></li>
+                                                <li><a href="#n">라</a></li>
+                                                <li><a href="#n">마</a></li>
+                                                <li><a href="#n">바</a></li>
+                                                <li><a href="#n">사</a></li>
+                                                <li><a href="#n">아아아아</a></li>
+                                                <li><a href="#n">자자</a></li>
+                                                <li><a href="#n">차차차</a></li>
+                                                <li><a href="#n">카카카카</a></li>
+                                                <li><a href="#n">타타타</a></li>
+                                                <li><a href="#n">파파파</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <label for="">모델선택</label>
+                                    <ul class="select_box_conatiner">
+                                        <li><a href="#n">전체보기</a>
+                                            <ul class="select_list">
+                                                <li class="check"><a href="#n">전체보기</a></li>
+                                                <li><a href="#n">가</a></li>
+                                                <li><a href="#n">나</a></li>
+                                                <li><a href="#n">다</a></li>
+                                                <li><a href="#n">라</a></li>
+                                                <li><a href="#n">마</a></li>
+                                                <li><a href="#n">바</a></li>
+                                                <li><a href="#n">사</a></li>
+                                                <li><a href="#n">아아아아</a></li>
+                                                <li><a href="#n">자자</a></li>
+                                                <li><a href="#n">차차차</a></li>
+                                                <li><a href="#n">카카카카</a></li>
+                                                <li><a href="#n">타타타</a></li>
+                                                <li><a href="#n">파파파</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="dd" id="ab" checked>
+                                    <label for="ab">광고성 여부 <span></span></label>
+    
+                                    <input type="checkbox" name="dd" id="cd">
+                                    <label for="cd">피로도 적용 <span></span></label>
+    
+                                    <input type="checkbox" name="dd" id="ef" checked>
+                                    <label for="ef">탐색고객군 추가 <span></span></label>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- 컨텐츠 : 종료 -->
+                    </div>
+                    <div class="body_con_bg trageting_create_bottom_container">
+                        <!-- 컨텐츠 : 시작 -->
+                        <div class="tab_container">
+                            <ul>
+                                <li class="on"><a href="#n">모델상세</a></li>
+                            </ul>
+                            <div class="tab_right">
+                                <input type="checkbox" id="buy" name="" checked />
+                                <label for="buy">구매 <span></span></label>
+                            </div>
+                        </div>
+                        
+                        <div class="cate_container after_clear">
+                            <dl>
+                                <dt>
+                                    <p class="cate">브랜드</p>
+                                    <div class="padding-line">
+                                        <div class="search_area">
+                                            <input type="search" placeholder="Search..." />
+                                            <button></button>
+                                        </div>
+                                    </div>
+                                </dt>
+                                <dd class="cate_scroll">
+                                    <a href="#n" class="select">
+                                        <span>전체</span>
+                                        <i class="button btn_type02 btn_minus"></i>
+                                    </a>
+                                    <a href="#n">
+                                        <span>설화수</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                    <a href="#n">
+                                        <span>바이탈뷰티</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                    <a href="#n">
+                                        <span>설화수</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                    <a href="#n">
+                                        <span>바이탈뷰티</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                    <a href="#n">
+                                        <span>설화수</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                    <a href="#n">
+                                        <span>바이탈뷰티</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                    <a href="#n">
+                                        <span>설화수</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <p class="cate">대유형</p>
+                                    <div class="padding-line">
+                                        <div class="search_area">
+                                            <input type="search" placeholder="Search..." />
+                                            <button></button>
+                                        </div>
+                                    </div>
+                                </dt>
+                                <dd class="cate_scroll">
+                                    <a href="#n">
+                                        <span>전체</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                    <a href="#n">
+                                        <span>바이탈뷰티</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                    <a href="#n">
+                                        <span>설화수</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                    <a href="#n">
+                                        <span>바이탈뷰티</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                    <a href="#n">
+                                        <span>설화수</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                    <a href="#n">
+                                        <span>바이탈뷰티</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <p class="cate">중유형</p>
+                                    <div class="padding-line">
+                                        <div class="search_area">
+                                            <input type="search" placeholder="Search..." />
+                                            <button></button>
+                                        </div>
+                                    </div>
+                                </dt>
+                                <dd class="cate_scroll">
+                                    <a href="#n">
+                                        <span>전체</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <p class="cate">소유형</p>
+                                    <div class="padding-line">
+                                        <div class="search_area">
+                                            <input type="search" placeholder="Search..." />
+                                            <button></button>
+                                        </div>
+                                    </div>
+                                </dt>
+                                <dd class="cate_scroll">
+                                    <a href="#n">
+                                        <span>전체</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    <p class="cate">상품명</p>
+                                    <div class="padding-line">
+                                        <div class="search_area">
+                                            <input type="search" placeholder="Search..." />
+                                            <button></button>
+                                        </div>
+                                    </div>
+                                </dt>
+                                <dd class="cate_scroll">
+                                    <a href="#n">
+                                        <span>전체</span>
+                                        <i class="button btn_type02 btn_plus"></i>
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="cate_select_list">
+                            <b>선택 리스트</b>
+                            <span>구매</span>
+                            <span>윤조에센스</span>
+                        </div>
+
+                        <!-- 컨텐츠 : 종료 -->
+                    </div>
+                </section>
+
+                <!-- 컨텐츠 : 하단 : 버튼 및 페이징 영역 -->
+                <footer id="body_footer">
+                    <div class="body_btn">
+                        <a href="#n" class="button btn_type06">취소</a>
+                        <a href="#n" class="button btn_type05 next"></a>
+                    </div>
+                </footer>
+            </section>
+            <div id="shadow_bg"></div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                //캘린더 스타일 적용
+                $('#datepicker').datepicker({                    
+                    dateFormat: 'yy/mm/dd' //Input Display Format 변경
+                    ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+                    ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+                    ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+                    ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+                    ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+                    ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+                    ,buttonImage: "./images/icon-calendar-20-px-w.png" //버튼 이미지 경로
+                    ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+                    ,buttonText: "캘린더보기" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트
+                    ,minDate: "-3Y" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+                    ,maxDate: "+3Y" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+                });
+                $('#datepicker').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후) 
+
+                $('#datepicker2').datepicker({                    
+                    dateFormat: 'yy/mm/dd' //Input Display Format 변경
+                    ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+                    ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+                    ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+                    ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+                    ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+                    ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+                    ,buttonImage: "./images/icon-calendar-20-px-w.png" //버튼 이미지 경로
+                    ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+                    ,buttonText: "캘린더보기" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트
+                    ,minDate: "-3Y" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+                    ,maxDate: "+3Y" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+                });
+                $('#datepicker2').datepicker('setDate', '+10D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후) 
+
+                $('.targeting_infomation > li .datepicker').mouseenter(function(){
+                    $('.ui-datepicker-trigger').addClass('hover');
+                });
+
+                //모델상세 영역 높이값계산처리
+                var TCBH = $('#body_contents').height() - $('.trageting_create_top_container').height(); - 10;
+
+                $('.trageting_create_bottom_container').css('height',TCBH + 'px');
+
+                $(window).resize(function(){
+                    var TCBH = $('#body_contents').height() - $('.trageting_create_top_container').height(); - 10;
+
+                    $('.trageting_create_bottom_container').css('height',TCBH + 'px');
+                });
+
+
+                //선택리스트 - X버튼 효과
+                $('.cate_select_list > span').click(function(){
+                    $(this).stop().fadeOut('fast');
+                });
+            });
+        </script>
+    </body>
+    <script>
+var ajaxFactory = (function() {
+	
+	var defaultOpt = {};
+	defaultOpt.type = "POST";
+	defaultOpt.contentType = "application/json";
+	defaultOpt.dataType = "json";
+	
+	var get = function(uri, data, bsCallback, callback) {
+		var opt = {};
+		opt = makeOpt(bsCallback, callback);
+		opt.type = "GET";
+		opt.contentType = "text/html";
+		opt.url = uri;
+		excuteAjax(opt);
+	};
+	
+	var post = function(uri, data, bsCallback, callback) {
+		var opt = {};
+		opt = makeOpt(bsCallback, callback);
+		opt.url = uri;
+		opt.data = data;
+		if(typeof data == "object") opt.data = JSON.stringify(data);
+		
+		excuteAjax(opt);
+	};
+	
+	var put = function(uri, data, bsCallback, callback) {
+		var opt = {};
+		opt = makeOpt(bsCallback, callback);
+		opt.type = "PUT";
+		opt.url = uri;
+		opt.data = data;
+		if(typeof data == "object") opt.data = JSON.stringify(data);
+		
+		excuteAjax(opt);
+	};
+	
+	var del = function(uri, data, bsCallback, callback) {
+		var opt = {};
+		opt = makeOpt(bsCallback, callback);
+		opt.type = "DELETE";
+		opt.url = uri;
+		
+		excuteAjax(opt);
+	};
+	
+	var multipart = function(uri, data, bsCallback, callback) {
+		var opt = {};
+		opt = makeOpt(bsCallback, callback);
+		opt.type = "POST";
+		opt.processData = false;
+		opt.contentType = false;
+		opt.url = uri;
+		opt.data = data;
+		
+		excuteAjax(opt);
+	};
+	
+	var makeOpt = function(bsCallback, callback) {
+		var opt = {};
+		$.extend(opt, defaultOpt);
+		
+		if(typeof bsCallback == "function") {
+			opt.beforSend = function() { 
+				bsCallback();
+			}
+		}
+		opt.success = function(res) {
+			callback(res);
+		};
+		
+		return opt;
+	};
+	
+	var excuteAjax = function(opt) {
+		try {
+			$.ajax(opt);
+		} catch (e) {
+			console.log("excuteAjax Exception: ", e);
+		}
+	};
+	
+	return {
+		get : get,
+		post : post,
+		put : put,
+		del : del,
+		multipart : multipart
+	}
+	
+}());
+
+//넘어온 값이 빈값인지 체크합니다. 
+// !value 하면 생기는 논리적 오류를 제거하기 위해 
+// 명시적으로 value == 사용 
+// [], {} 도 빈값으로 처리
+var isEmpty = function(value) { 
+		if( value == "" || value == null || value == undefined || ( value != null && typeof value == "object" && !Object.keys(value).length ) ) { 
+			return true 
+		} else { 
+			return false 
+		}
+	};
+
+var enterEvent = function(selector, callback) {
+		// enter event
+		$(selector).on('keyup', function(e) {
+		    if (e.keyCode == 13) callback();        
+		});
+	};
+
+	
+/*=========================공통 리스트===========================*/
+function CommonList() {
+	var page, totalCount, maxRow, size, rowArr, columnArr, wheres, pageSelector, listSelector, useKeys;
+	this.init();
+};
+CommonList.prototype.init = function() {
+	this.page = 1;
+	this.totalCount = 1;
+	this.columnArr = [];
+	this.rowArr = [];
+	this.size = 10;
+	this.maxRow = 10;
+	this.wheres = {};
+	this.pageSelector = "";
+	this.listSelector = "";
+	this.useKeys = "";
+}
+/*
+*@Param page - 현재 페이지 <int>
+*@Param totalCount - 총 row 수 <int>
+*@Param wheres - 검색 조건, 필터. <Object>
+ list.setPage(3, 1010, {"channel": "channel", "chDetail": "chDetail", "type":"type", "order":{colId:"", order:"DESC"}});
+*/
+CommonList.prototype.setPage = function(page, totalCount, wheres) {
+	this.page = page;
+	this.totalCount = totalCount;
+	this.wheres = wheres;
+};
+
+/* 
+[{"colId":"colId", "colNm":"colNm", },{...}]
+var colArr = new Array();
+colArr.push({colId:"num", colNm:"#"});
+colArr.push({colId:"checkbox", colNm:"", cbox:true});
+colArr.push({colId:"targetId", colNm:"Target ID", filter:true, order:true});
+colArr.push({colId:"targetNm", colNm:"Target 명"});
+colArr.push({colId:"channel", colNm:"채널"});
+colArr.push({colId:"type", colNm:"Type"});
+colArr.push({colId:"model", colNm:"Model"});
+colArr.push({colId:"writer", colNm:"생성자"});
+colArr.push({colId:"regDt", colNm:"생성일자"});
+colArr.push({colId:"status", colNm:"상태"});
+colArr.push({colId:"edit", colNm:"편집"});
+*/
+CommonList.prototype.setColumn = function(arr) {
+	$.extend(this.columnArr, arr);
+};
+/* 
+ajax response value set..(contents.)
+var rowArr = new Array();
+rowArr.push({targetId:"TD_001",targetNm:"윤조에센스", channel:"백화점 설화수", type:"Smart", model:"구매예측", writer:"홍길동", regDt:"2019-01-01", status:"승인완료"});
+*/
+CommonList.prototype.setRow = function(arr) {
+	$.extend(this.rowArr, arr);
+};
+CommonList.prototype.setUseColId = function(keys) {
+	this.useKeys = keys;
+};
+CommonList.prototype.paging = function(selector) {
+	var self = this;
+	this.pageSelector = selector;
+	
+	var start, end;
+	var next = false;
+	var prev = false;
+	
+	var tempEnd = (Math.ceil(self.page/self.size)*self.size);
+	start = tempEnd - (self.size - 1);
+	var realEndPage = Math.ceil(self.totalCount*1 / self.maxRow);
+	if(tempEnd < realEndPage){
+		end = tempEnd;
+		next = true;
+	} else end = realEndPage;
+	if(start != 1) prev = true;
+	
+	var str = "";
+	
+	str += "<div class=\"showing_number\">";
+	str += "Showing <b>"+140+"</b> out of <b>"+340+"</b> entries";
+	str += "</div>"; 
+	if(prev) str += "<a data-idx=\""+Number(start-1)+"\" class=\"button btn_type02 prev\"></a>";
+	else str += "<a class=\"button btn_type02 prev\"></a>";
+	for(start; end >= start; start++) {
+		if(self.page == start) {
+			str += "<a class=\"on\" data-idx=\""+start+"\">"+start+"</a>";
+			continue;
+		}
+		str += "<a data-idx=\""+start+"\">"+start+"</a>";
+	}
+	
+	if(next) str += "<a data-idx=\""+Number(end+1)+"\" class=\"button btn_type02 next\"></a>";
+	else str += "<a class=\"button btn_type02 next\"></a>";
+	
+	$(selector).html(str);
+};
+CommonList.prototype.pageEvent = function(callback) {
+	var self = this;
+	
+	$(self.pageSelector+" "+"a").on('click', function() {
+		var selectedPage = $(this).data('idx');
+		
+		if(!selectedPage) return false;
+		
+		var obj = {};
+		obj.page = selectedPage;
+		obj.wheres = self.wheres;
+		
+		callback(obj);
+	});
+};
+	
+CommonList.prototype.excute = function(listSelector) {
+	var self = this;
+	this.listSelector = listSelector;
+	
+	
+	/*var $table = $('<table class=\"horizen_tb\"></table>');
+	var $colgroup = $('<colgroup></colgroup>');
+	$.each(self.columnArr, function() {
+		var $col =$('<col width=\"\"></col>');
+		$colgroup.append($col);
+	});
+	
+	var $thead = $('<thead></thead>');
+	var $tr = $('<tr></tr>');
+	
+	$.each(self.columnArr, function(idx, entry) {
+		
+		var $th = $('<th scope="col"></th>');
+		$th.text(entry.colNm);
+		
+		if(entry.cbox) {
+			$th.append($('<input type="checkbox"/>'));
+		}
+		if(entry.order) {
+			$th.append($('<i id=\"order\" data-order=\"desc\" class="fas fa-arrows-alt-v"></i>'));
+		}
+		if(entry.filter) {
+			$th.append($('<a href="#n" class="fas fa-filter"></a>'));
+		}
+		
+		$tr.append($th);
+	});
+	$thead.append($tr);*/
+	
+	var $div = $('<div></div>');
+	for(var i=0; self.maxRow>i; i++) {
+		var $ol = $('<ol class="after_clear"></ol>');
+		$.each(self.columnArr, function(idx, colEntry) {
+			var $li = $('<li></li>');
+			var num = (self.page-1)*self.size + (i+1);
+			
+			if(colEntry.colId == "num") {
+				if(!isEmpty(self.rowArr[i]) && !isEmpty(self.useKeys)) {
+					var selfKeys = self.useKeys.split(",")
+					var keys = Object.keys(self.rowArr[i]);
+					
+					$.each(selfKeys, function(sIdx, sKey) {
+						$.each(keys, function(idx, key) {
+							if(sKey == key) {
+								var value = self.rowArr[i][key];
+								$li.attr('data-'+key, value);
+							}
+						});
+					});
+					
+				}
+				$li.text(num);
+				$ol.append($li)
+				return true;
+			}
+			
+			if(colEntry.colId == "checkbox") {
+				$li.append($('<input type="checkbox"/>'));
+				$ol.append($li);
+				return true;
+			}
+			
+			if(!self.rowArr[i]) {
+				$ol.append($li);
+				return true;
+			}
+			
+			if(!colEntry.colId) {
+				$ol.append($li);
+				return true;
+			}
+			
+			if(colEntry.flag) {
+				//switch 설정
+				//val(self.rowArr[i][colEntry.colId]);
+				$li.append('flag');
+				$ol.append($li);
+				return true;
+			}
+			
+			if(colEntry.colId == "edit") {
+				var $div = $('<div class="table_btn_box"></div>');
+				
+				$div.append('<a href="#n" class="button btn_type02 view target-view"></a>');
+				$div.append('<a href="#n" class="button btn_type02 modi target-update"></a>');
+				$div.append('<a href="#n" class="button btn_type02 delet target-del"></a>');
+				$li.append($div);
+				$ol.append($li);
+				return true;
+			}
+			
+			$li.text(self.rowArr[i][colEntry.colId]);
+			$li.attr("data-id", colEntry.colId);
+			$ol.append($li);
+		});
+		
+		$div.append($ol);
+	}
+	
+	var str = $('<div>').append($div.clone()).html();
+	
+	$(listSelector).html(str);
+	//리스트 리사이즈..
+	listResize();
+};
+CommonList.prototype.orderEvent = function(callback) {
+	var self = this;
+	
+	$('.btn_acend').off();
+	$('.btn_acend').on('click', function() {
+		var $this = $(this);
+		var id = $this.data('colId');
+		var obj = {};
+		obj.colId = id;
+		
+		if($this.hasClass('down') || $this.hasClass('up')) {
+			if($this.hasClass('down')) {
+				obj.order = "ASC";
+				$this.removeClass('down');
+				$this.addClass('up');
+			} else {
+				obj.order ="DESC";
+				$this.removeClass('up');
+				$this.addClass('down');
+			}
+		} else {
+			obj.order = "DESC";
+			$('.btn_acend.down, .btn_acend.up').removeClass('down').removeClass('up').addClass('no');
+			$this.removeClass('no');
+			$this.addClass('down');
+		}
+		self.wheres.order = obj;
+		callback(self.wheres);
+	});
+	
+};
+CommonList.prototype.viewClickEvent = function(callback) {
+	var self = this;
+	callback(self.useKeys);
+};
+CommonList.prototype.updateClickEvent = function(callback) {
+	var self = this;
+	callback(self.useKeys);
+};
+CommonList.prototype.deleteClickEvent = function(callback) {
+	var self = this;
+	var obj = {};
+	obj.page = self.page;
+	obj.wheres = self.wheres;
+	callback(obj);
+};
+/*=========================공통 리스트===========================*/
+
+//화면 호출
+function pageLoad(uri) {
+	$('#body_wrap').load(uri);
+};
+
+//리스트 리사이즈 호출
+function listResize() {
+	//타겟팅 조회 리스트 10개 세로사이즈 자동 정렬
+    var li_H = $('#body_contents').height() - $('.fixed_top').height() - 10;
+
+    $('.table_type_td_container ol > li').css('height', li_H / 10 + 'px');
+    $('.table_type_td_container ol > li').css('line-height', li_H / 10 + 'px');
+
+    $(window).resize(function(){
+        var li_H = $('#body_contents').height() - $('.fixed_top').height() - 10;
+        
+        $('.table_type_td_container ol > li').css('height', li_H / 10 + 'px');
+        $('.table_type_td_container ol > li').css('line-height', li_H / 10 + 'px');
+    });
+    
+    $('.table_type_td_container ol > li').click(function(){
+    	var $this = $(this);
+    	var $parent = $this.parent('ol');
+    	if($parent.hasClass('selected')) {
+    		$parent.removeClass('selected');
+    	} else {
+    		$('.table_type_td_container ol').removeClass('selected');
+    		$parent.addClass('selected');
+    	}
+    });
+}
+
+//셀렉트 박스 이벤트 호출
+function selectBoxEvent() {
+	 //셀렉트박스 선택시 슬라이드 토글기능
+    $('.select_box_conatiner > li > a').click(function(){
+        $(this).toggleClass('on');
+        $(this).parent().children('.select_box_conatiner > li .select_list').stop().slideToggle('fast');
+    });
+    //셀렉트박스 내용선택시 최상단창에 텍스트 값 변환
+    $('.select_list > li > a').click(function(){        
+        var clickText = $(this).text();
+
+        $(this).parent('li').parent('ul').children('li').removeClass('check');
+        $(this).parent('li').addClass('check');
+        $(this).parents('.select_list').stop().slideUp('fast');
+        $(this).parent('li').parent('ul').parent('li').children('a').removeClass('on');
+        $(this).parent('li').parent('ul').parent('li').children('a').text(clickText);
+    });
+}
+</script>
+</html>
